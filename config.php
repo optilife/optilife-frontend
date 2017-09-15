@@ -7,7 +7,7 @@
     'home' => [
       'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/',
       'text' => 'Log in',
-      'template' => 'sections/login.php',
+      'template' => 'pages/login.php',
       'body_cls' => 'page-login',
     ],
   ];

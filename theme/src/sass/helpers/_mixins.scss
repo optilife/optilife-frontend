@@ -1,0 +1,21 @@
+//-----------------------------------------------------------------------------
+// Helpers: Mixins.
+//-----------------------------------------------------------------------------
+
+@mixin prefix($declarations, $prefixes: ('webkit', 'khtml', 'moz', 'ms', 'o')) {
+  @each $property, $value in $declarations {
+    @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $property}: $value;
+    }
+
+    #{$property}: $value;
+  }
+}
+
+.clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
