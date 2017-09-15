@@ -10,7 +10,13 @@
   <body class="<?php print $page_body_cls; ?>">
     <div id="body__inner">
       <header>
-        <nav class="nav-primary" role="navigation">
+        <div id="logo">
+          <a href="/" title="Home" rel="home" class="site-logo">
+            <img src="/theme/img/optilife.png" alt="OptiLife" title="OptiLife" />
+          </a>
+        </div>
+
+        <nav id="nav-primary" role="navigation">
           <ul>
 <?php foreach ($nav_links as $nav_name => $nav_link) { ?>
               <li><a href="<?php print $nav_link['link']; ?>"><?php print $nav_link['text']; ?></a></li>
