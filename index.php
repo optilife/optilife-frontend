@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/theme/dist/css/style.css" media="all" />
   </head>
 
-  <body>
+  <body class="<?php print $page_body_cls; ?>">
     <div id="body__inner">
       <header>
         <nav class="nav-primary" role="navigation">
