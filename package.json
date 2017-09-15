@@ -1,0 +1,26 @@
+{
+  "name": "optilife.pacassi.ch",
+  "version": "0.1.0",
+  "description": "",
+  "author": "David Pacassi Torrico",
+  "license": "UNLICENSED",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:optilife/optilife-frontend.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-uglify": "^2.0.1",
+    "pump": "^1.0.2"
+  },
+  "dependencies": {
+    "del": "^2.2.2"
+  }
+}

@@ -1,0 +1,12 @@
+# Ignore IDE created files and directories.
+/.settings
+/.buildpath
+/.project
+/.idea
+
+# Ignore frontend packages.
+node_modules
+
+# Ignore devel resources.
+*.css.map
+*.js.map
