@@ -1,6 +1,6 @@
 <section class="login">
   <div class="content">
-    <h2>Log in</h2>
+    <h1>Log in</h1>
 
     <form id="user-login-form" class="user-login-form" method="post" accept-charset="UTF-8">
       <div class="form-item">
