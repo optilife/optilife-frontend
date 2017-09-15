@@ -1,0 +1,18 @@
+//-----------------------------------------------------------------------------
+// Forms: All forms.
+//-----------------------------------------------------------------------------
+
+form {
+  // Label styling.
+  label {
+    &:after {
+      content: ':';
+    }
+  }
+
+  // Form item spacing.
+  .form-item + .form-item,
+  .form-actions {
+    margin-top: 0.75rem;
+  }
+}
