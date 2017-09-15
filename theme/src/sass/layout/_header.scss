@@ -1,0 +1,17 @@
+//-----------------------------------------------------------------------------
+// Layout: Header.
+//-----------------------------------------------------------------------------
+
+header {
+  background-color: $color-light-blue;
+  color: $color-white;
+
+  #logo {
+    display: inline-block;
+
+    img {
+      background-color: $color-white;
+      border-radius: 100%;
+    }
+  }
+}
