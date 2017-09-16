@@ -1,0 +1,15 @@
+//-----------------------------------------------------------------------------
+// Components: Messages.
+//-----------------------------------------------------------------------------
+
+.message {
+  font-family: $font-lato;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1rem 0.575rem;
+
+  &.error--message {
+    background-color: #fbe7e5;
+    border: solid 1px #db1802;
+    color: #db1802;
+  }
+}

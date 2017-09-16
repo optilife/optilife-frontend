@@ -39,10 +39,10 @@
           $page_body_cls = $page_links['dashboard']['body_cls'];
           $additional_args['uid'] = $response_object;
         } else {
-          $_SESSION['error_message'] = 'Error logging in: Username and password don\'t match';
+          $_SESSION['error_message'] = 'The username and password you entered did not match our records.';
         }
       } else {
-        $_SESSION['error_message'] = 'Error logging in: Username and password don\'t match';
+        $_SESSION['error_message'] = 'The username and password you entered did not match our records.';
       }
     }
   }

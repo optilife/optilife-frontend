@@ -34,6 +34,21 @@ $(document).ready(function() {
     return Math.floor(Math.random()*(max-min+1)+min);
   }
 
+  function ajaxPageCallback(data, ajaxUrl) {
+    $pageTitle.html(data.title);
+    $pageContent.html(data.html);
+    parseHtml($pageContent);
+    $pageContent.fadeIn(500, function() {
+      $logo.removeClass('spin');
+    });
+
+    history.pushState({
+      title   : data.title,
+      html    : data.html,
+      ajaxUrl : ajaxUrl
+    }, data.title, data.path);
+  }
+
 
   //----- History Loader.
 
@@ -169,10 +184,14 @@ $(document).ready(function() {
     }
 
 
-    //----- Log in behavior.
+    //----- Ajax forms.
+
     $(context).find('#user-login-form').ajaxForm({
       url: 'ajax.php?action=login',
-      type: 'post'
+      type: 'post',
+      success: function(data) {
+        ajaxPageCallback(data, 'ajax.php?action=login');
+      }
     });
 
 
@@ -186,18 +205,7 @@ $(document).ready(function() {
       $pageContent.fadeOut(500);
 
       $.get(ajaxUrl, function(data) {
-        $pageTitle.html(data.title);
-        $pageContent.html(data.html);
-        parseHtml($pageContent);
-        $pageContent.fadeIn(500, function() {
-          $logo.removeClass('spin');
-        });
-
-        history.pushState({
-          title   : data.title,
-          html    : data.html,
-          ajaxUrl : ajaxUrl
-        }, data.title, data.path);
+        ajaxPageCallback(data, ajaxUrl);
       });
 
       e.preventDefault();

@@ -3,7 +3,7 @@
     <h1>Log in</h1>
 
     <?php if (!empty($_SESSION['error_message'])) { ?>
-      <div class="error-message">
+      <div class="message error--message">
         <?php print $_SESSION['error_message']; unset($_SESSION['error_message']); ?>
       </div>
     <?php } ?>
