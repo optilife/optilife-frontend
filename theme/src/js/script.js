@@ -6,6 +6,7 @@ $(document).ready(function() {
   //----- Configuration.
 
   var fancyInputs = 'input[type=text],input[type=password],input[type=email],input[type=number],input[type=date]';
+  var $pageContent = $('#page-content');
 
 
   //----- Helper functions.
@@ -34,19 +35,21 @@ $(document).ready(function() {
 
   //----- Ajax helper.
 
-  function parseHtml() {
+  function parseHtml(context) {
+    var context = $(context);
+
     // Init fields on page load.
-    $(fancyInputs).each(function() {
+    $(context).find(fancyInputs).each(function() {
       checkInputContent(this, true);
     });
 
     // Update fields on focus out.
-    $(fancyInputs).focusout(function() {
+    $(context).find(fancyInputs).focusout(function() {
       checkInputContent(this, false);
     });
 
     // Init select fields.
-    $('select').select2({
+    $(context).find('select').select2({
       minimumResultsForSearch: -1,
       width: '100%'
     });
@@ -62,7 +65,7 @@ $(document).ready(function() {
       animate: 1000
     };
 
-    $('.statistic').easyPieChart(easyPieOptions);
+    $(context).find('.statistic').easyPieChart(easyPieOptions);
 
     // Chart.js implementation.
     if (document.getElementById('finances-chart')) {
@@ -139,25 +142,24 @@ $(document).ready(function() {
       var healthChart = new Chart(healthCtx, config);
       var financesChart = new Chart(financesCtx, config);
     }
+
+
+    //----- Ajax behavior.
+
+    $(context).find('a[data-href]').on('click', function(e) {
+      var $this = $(this);
+      var ajaxUrl = $this.attr('data-href');
+
+      $.get(ajaxUrl, function(data) {
+        var content = data.content;
+        $pageContent.html(content);
+        parseHtml($pageContent);
+      });
+
+      e.preventDefault();
+      return false;
+    });
   }
 
-  parseHtml();
-
-
-  //----- Ajax behavior.
-
-  var $pageContent = $('#page-content');
-  $('a[data-href]').on('click', function(e) {
-    var $this = $(this);
-    var ajaxUrl = $this.attr('data-href');
-
-    $.get(ajaxUrl, function(data) {
-      var content = data.content;
-      $pageContent.html(content);
-      parseHtml();
-    });
-
-    e.preventDefault();
-    return false;
-  });
+  parseHtml('html');
 });
