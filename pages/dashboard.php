@@ -16,10 +16,22 @@
     </fieldset>
 
     <fieldset>
+      <legend>Health comparation</legend>
+
+      <canvas id="health-chart" width="400" height="150"></canvas>
+    </fieldset>
+
+    <fieldset>
       <legend>Finances</legend>
 
       <div class="statistic statistic--lines-2" data-percent="80"><span>80%</span>budget<br />used</div>
       <div class="statistic statistic--lines-2" data-percent="15"><span>15%</span>save<br />potential</div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Finances comparation</legend>
+
+      <canvas id="finances-chart" width="400" height="200"></canvas>
     </fieldset>
 
     <div class="active-challenges">
