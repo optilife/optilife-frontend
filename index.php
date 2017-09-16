@@ -8,6 +8,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/theme/dist/css/style.css" media="all" />
     <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+
+    <!-- SEO -->
+    <meta property="og:title" content="OptiLife - Optimize your life!" />
+    <meta property="og:description" content="Do you want to lose weight? Do you want to save money? Do you want to optimize your life?" />
+    <meta property="og:image" content="<?php print $protocol . '://' . $_SERVER['SERVER_NAME'] . '/theme/img/optilife-og.jpg'; ?>" />
   </head>
 
   <body class="<?php print $page_body_cls; ?>">
