@@ -2,7 +2,7 @@
 // Helpers: Variables.
 //-----------------------------------------------------------------------------
 
-// Colors.
+// Base colors.
 $color-white: #ffffff;
 $color-black: #000000;
 
@@ -11,6 +11,10 @@ $color-blue: #3399ff;
 
 $color-grey-lighter: #cccccc;
 $color-grey: #aaaaaa;
+
+// Main colors.
+$color-primary: $color-light-blue;
+$color-primary-darker: $color-blue;
 
 // Fonts.
 $font-lato: 'Lato', sans-serif;

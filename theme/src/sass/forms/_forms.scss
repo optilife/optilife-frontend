@@ -20,7 +20,7 @@ form {
     }
 
     &:focus ~ .focus-border {
-      background-color: $color-blue;
+      background-color: $color-primary;
       bottom: 0;
       height: 2px;
       left: 0;
@@ -52,7 +52,7 @@ form {
 
     &:focus ~ label,
     &.has-content ~ label {
-      color: $color-blue;
+      color: $color-primary-darker;
       font-size: 0.75rem;
       top: -1rem;
     }
