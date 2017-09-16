@@ -7,6 +7,10 @@ form {
   .form-item__standard {
     label {
       color: $color-primary-darker;
+      display: block;
+      font-family: $font-lato;
+      font-size: 1rem;
+      padding-bottom: 0.25rem;
 
       &:after {
         content: ':';
@@ -19,11 +23,17 @@ form {
     input {
       color: $color-grey !important;
       border-bottom: 1px solid $color-grey-lighter !important;
+      font-size: 1.25rem;
 
       &:focus ~ .focus-border {
         display: none;
       }
     }
+  }
+
+  // Select fields.
+  select {
+    width: 100%;
   }
 
   // Label animation.
@@ -34,6 +44,7 @@ form {
     border-bottom: 1px solid $color-grey-lighter;
     color: $color-black;
     font-family: $font-lato;
+    font-size: 1.25rem;
     letter-spacing: 1px;
     padding: 0.25rem 0;
     width: 100%;
@@ -64,6 +75,7 @@ form {
     & ~ label {
       color: $color-grey;
       font-family: $font-lato;
+      font-size: 1.25rem;
       left: 0;
       letter-spacing: 0.5px;
       position: absolute;
@@ -76,7 +88,7 @@ form {
     &:focus ~ label,
     &.has-content ~ label {
       color: $color-primary-darker;
-      font-size: 0.75rem;
+      font-size: 1rem;
       top: -1rem;
     }
   }

@@ -1,13 +1,13 @@
 'use strict';
 
 $(document).ready(function() {
-  function checkInputContent(input) {
+  function checkInputContent(input, reset) {
     var $input = $(input);
 
     if ($input.val() != '') {
       $input.addClass('has-content');
     } else {
-      if ($input.prop('defaultValue')) {
+      if (reset && $input.prop('defaultValue')) {
         $input.val($input.prop('defaultValue'));
       } else {
         $input.removeClass('has-content');
@@ -17,11 +17,17 @@ $(document).ready(function() {
 
   // Init fields on page load.
   $('input[type=text],input[type=password]').each(function() {
-    checkInputContent(this);
+    checkInputContent(this, true);
   });
 
   // Update fields on focus out.
   $('input[type=text],input[type=password]').focusout(function() {
-    checkInputContent(this);
+    checkInputContent(this, false);
   })
+
+  // Init select fields.
+  $('select').select2({
+    minimumResultsForSearch: -1,
+    width: 'element'
+  });
 });

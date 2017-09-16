@@ -22,7 +22,7 @@
       </div>
 
       <div class="form-item form-item__standard">
-        <label for="gender">Last name</label>
+        <label for="gender">Gender</label>
         <select id="gender" name="gender">
           <option value="female">Female</option>
           <option value="male">Male</option>

@@ -5,6 +5,7 @@
     <title>optilife.pacassi.ch</title>
     <link rel="stylesheet" href="/theme/vendor/css/html5reset-1.6.1.css" media="all" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Montserrat:600,600i">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/theme/dist/css/style.css" media="all" />
   </head>
 
@@ -55,6 +56,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script src="/theme/dist/js/script.min.js"></script>
   </body>
 </html>
