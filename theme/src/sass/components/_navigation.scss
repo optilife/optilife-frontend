@@ -23,7 +23,6 @@ aside {
       a {
         border-bottom: solid 1px $color-white;
         color: $color-white;
-        display: block;
         font-family: $font-lato;
         height: $nav-width;
         padding: 16px 0;
@@ -35,10 +34,6 @@ aside {
           font-size: 0.8rem;
           height: $nav-width / 1.5;
           padding: 8px 0;
-        }
-
-        &:hover {
-          background-color: $color-primary-brighter;
         }
 
         .icon--wrap {

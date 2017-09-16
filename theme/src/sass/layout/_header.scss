@@ -15,7 +15,10 @@ header {
 
   #logo {
     display: inline-block;
-    padding: 8px 0 9px;
+
+    a {
+      padding: 8px 0 9px;
+    }
 
     img {
       background-color: $color-white;
@@ -25,6 +28,14 @@ header {
     svg {
       height: $icon-width;
       width: $nav-width;
+    }
+  }
+
+  a {
+    display: block;
+
+    &:hover {
+      background-color: $color-primary-brighter;
     }
   }
 }
