@@ -9,6 +9,26 @@
         <span class="focus-border"></span>
       </div>
 
+      <div class="form-item">
+        <input id="firstname" type="text" name="firstname" value="David" />
+        <label for="firstname">First name</label>
+        <span class="focus-border"></span>
+      </div>
+
+      <div class="form-item">
+        <input id="lastname" type="text" name="lastname" value="Pacassi Torrico" />
+        <label for="lastname">Last name</label>
+        <span class="focus-border"></span>
+      </div>
+
+      <div class="form-item form-item__standard">
+        <label for="gender">Last name</label>
+        <select id="gender" name="gender">
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+        </select>
+      </div>
+
       <div class="form-actions">
         <input id="submit" type="submit" value="Update" class="button button-primary" />
       </div>
