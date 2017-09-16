@@ -5,7 +5,7 @@ $(document).ready(function() {
 
   //----- Configuration.
 
-  var fancyInputs = 'input[type=text],input[type=password],input[type=email]';
+  var fancyInputs = 'input[type=text],input[type=password],input[type=email],input[type=number],input[type=date]';
 
 
   //----- Helper functions.

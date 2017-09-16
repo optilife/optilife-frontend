@@ -36,7 +36,9 @@ form {
   // Label animation.
   input[type="text"],
   input[type="password"],
-  input[type="email"] {
+  input[type="email"],
+  input[type="number"],
+  input[type="date"] {
     background-color: transparent;
     border: none;
     border-bottom: 1px solid $color-grey-lighter;
@@ -114,5 +116,21 @@ form {
   // Form actions spacing.
   .form-actions {
     margin-top: 1.25rem;
+  }
+
+  // Fieldsets.
+  fieldset {
+    border: solid 1px $color-black;
+    padding: 0.5rem 1rem 1.25rem;
+  }
+
+  fieldset + fieldset {
+    margin-top: 1.5rem;
+  }
+
+  legend {
+    color: $color-black;
+    font-family: $font-lato;
+    padding: 0 0.5rem;
   }
 }
