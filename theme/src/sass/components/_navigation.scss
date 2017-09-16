@@ -30,7 +30,9 @@ aside {
         @include prefix((transition: $transition-ease-in-out));
 
         @media screen and (max-width: $breakpoint-2) {
+          font-size: 0.8rem;
           height: $nav-width / 1.5;
+          width: $nav-width / 1.5;
         }
 
         &:hover {
