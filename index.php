@@ -26,7 +26,7 @@
               <ul>
                 <?php foreach ($nav_links as $nav_name => $nav_link) { ?>
                   <li class="<?php print $nav_link['nav_cls']; ?>">
-                    <a href="<?php print $nav_link['link']; ?>">
+                    <a href="<?php print $nav_link['link']; ?>" data-href="<?php print $nav_link['ajax-link']; ?>">
                       <div class="icon--wrap">
                         <img src="/theme/img/icons/<?php print $nav_link['icon']; ?>" alt="<?php print $nav_link['text']; ?>" title="<?php print $nav_link['text']; ?>" />
                       </div>

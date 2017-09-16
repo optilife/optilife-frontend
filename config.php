@@ -1,11 +1,13 @@
 <?php
   // Helper variables.
   $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? 'https' : 'http';
+  $base_ajax_url = $protocol . '://' . $_SERVER['SERVER_NAME'] . '/ajax.php';
 
   // Define pages.
   $page_links = [
     'login' => [
       'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=login',
+      'ajax-link' => $base_ajax_url . '?page=login',
       'text' => 'Log in',
       'template' => 'pages/login.php',
       'body_cls' => 'page-login',
@@ -14,6 +16,7 @@
     ],
     'dashboard' => [
       'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=dashboard',
+      'ajax-link' => $base_ajax_url . '?page=dashboard',
       'text' => 'Dashboard',
       'template' => 'pages/dashboard.php',
       'body_cls' => 'page-dashboard',
@@ -22,6 +25,7 @@
     ],
     'upload' => [
       'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=upload',
+      'ajax-link' => $base_ajax_url . '?page=upload',
       'text' => 'Add data',
       'template' => 'pages/upload.php',
       'body_cls' => 'page-upload',
@@ -30,6 +34,7 @@
     ],
     'profile' => [
       'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=profile',
+      'ajax-link' => $base_ajax_url . '?page=profile',
       'text' => 'Profile',
       'template' => 'pages/profile.php',
       'body_cls' => 'page-profile',
@@ -38,6 +43,7 @@
     ],
     'logout' => [
       'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=logout',
+      'ajax-link' => $base_ajax_url . '?page=logout',
       'text' => 'Log out',
       'template' => 'pages/profile.php',
       'body_cls' => 'page-profile',
