@@ -11,6 +11,7 @@
   // Define pages.
   $page_links = [
     'dashboard' => [
+      'hidden' => FALSE,
       'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=dashboard',
       'ajax-link' => $base_ajax_url . '?page=dashboard',
       'text' => 'Dashboard',
@@ -20,6 +21,7 @@
       'icon' => 'dashboard.svg',
     ],
     'upload' => [
+      'hidden' => FALSE,
       'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=upload',
       'ajax-link' => $base_ajax_url . '?page=upload',
       'text' => 'Add data',
@@ -29,6 +31,7 @@
       'icon' => 'upload.svg',
     ],
     'profile' => [
+      'hidden' => FALSE,
       'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=profile',
       'ajax-link' => $base_ajax_url . '?page=profile',
       'text' => 'Profile',
@@ -38,6 +41,7 @@
       'icon' => 'profile.svg',
     ],
     'logout' => [
+      'hidden' => FALSE,
       'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=logout',
       'ajax-link' => $base_ajax_url . '?action=logout',
       'text' => 'Log out',
@@ -45,6 +49,17 @@
       'body_cls' => 'page-profile',
       'nav_cls' => 'menu-item menu-item--logout',
       'icon' => 'logout.svg',
+    ],
+    // Hiden pages
+    'label_food' => [
+      'hidden' => TRUE,
+      'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=labelFood',
+      'ajax-link' => $base_ajax_url . '?page=labelFood',
+      'text' => 'Label food',
+      'template' => 'pages/label_food.php',
+      'body_cls' => 'page-label-food',
+      'nav_cls' => 'menu-item menu-item--label-food',
+      'icon' => 'home.svg',
     ],
   ];
 

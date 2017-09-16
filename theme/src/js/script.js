@@ -224,6 +224,23 @@ $(document).ready(function() {
         $(this).removeClass('readonly');
       }});
 
+    $(context).find('#user-label-food-form').ajaxForm({
+      cache: false,
+      url: 'ajax.php?action=labelFood2&uid=' + Cookies.get('uid'),
+      type: 'post',
+      beforeSubmit: function(arr, form) {
+        $logo.addClass('spin');
+        $(form).addClass('readonly');
+      },
+      success: function(data) {
+        if (data.args.hasOwnProperty('success')) {
+          // Upload was successful.
+        }
+
+        ajaxPageCallback(data, 'ajax.php?action=dashboard');
+        $(this).removeClass('readonly');
+      }});
+
 
     //----- Ajax behavior.
 

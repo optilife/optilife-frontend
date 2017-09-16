@@ -77,18 +77,60 @@
           $response_object = json_decode($python_response->getBody(), true);
           $additional_args['foodLabels'] = $response_object;
 
-          // Set success message.
-          $_SESSION['success_message'] = 'Your image was successfully uploaded.';
+          if (!empty($response_object)) {
+            // Set success message.
+            $_SESSION['success_message'] = 'Your image was successfully uploaded.';
 
-          // Redirect the user to the dashboard.
-          $page_title = $page_links['dashboard']['text'];
-          $page_template = $page_links['dashboard']['template'];
-          $page_body_cls = $page_links['dashboard']['body_cls'];
+            // Set possible food categories.
+            $_SESSION['food_categories'] = $response_object['foodlabels'];
+
+            // Redirect the user to the dashboard.
+            $page_title = $page_links['label_food']['text'];
+            $page_template = $page_links['label_food']['template'];
+            $page_body_cls = $page_links['label_food']['body_cls'];
+          } else {
+            // Set error message.
+            $_SESSION['error_message'] = 'Please upload an image of a receipt or food.';
+
+            // Redirect the user to the upload page.
+            $page_title = $page_links['upload']['text'];
+            $page_template = $page_links['upload']['template'];
+            $page_body_cls = $page_links['upload']['body_cls'];
+          }
         } else {
           $_SESSION['error_message'] = 'Please upload an image.';
         }
       } else {
         $_SESSION['error_message'] = 'Please upload an image.';
+      }
+    } else if ($_GET['action'] == 'labelFood2') {
+      if (isset($_POST['category'])) {
+        // Send the food category to the python backend.
+        $python_url = 'food/log/' . $_GET['uid'];
+        $python_method = 'POST';
+        $python_client = new GuzzleHttp\Client([
+          'base_uri' => $python_base_url,
+        ]);
+        $python_response = $python_client->post($python_url, [
+          'json' => [
+            'label' => $_POST['category'],
+          ],
+        ]);
+
+        // Set success message.
+        $_SESSION['success_message'] = 'Your entry has been successfully logged!';
+
+        // Redirect the user to the dashboard.
+        $page_title = $page_links['dashboard']['text'];
+        $page_template = $page_links['dashboard']['template'];
+        $page_body_cls = $page_links['dashboard']['body_cls'];
+      } else {
+        $_SESSION['error_message'] = 'Please choose a food category.';
+
+        // Redirect the user to the image upload.
+        $page_title = $page_links['upload']['text'];
+        $page_template = $page_links['upload']['template'];
+        $page_body_cls = $page_links['upload']['body_cls'];
       }
     }
   }

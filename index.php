@@ -31,16 +31,18 @@
             <nav id="nav-primary" role="navigation">
               <ul>
                 <?php foreach ($nav_links as $nav_name => $nav_link) { ?>
-                  <li class="<?php print $nav_link['nav_cls']; ?>">
-                    <a href="<?php print $nav_link['link']; ?>" data-href="<?php print $nav_link['ajax-link']; ?>">
-                      <div class="icon--wrap">
-                        <img src="/theme/img/icons/<?php print $nav_link['icon']; ?>" alt="<?php print $nav_link['text']; ?>" title="<?php print $nav_link['text']; ?>" />
-                      </div>
-                      <div class="text--wrap">
-                        <?php print $nav_link['text']; ?>
-                      </div>
-                    </a>
-                  </li>
+                  <?php if (!$nav_link['hidden']) { ?>
+                    <li class="<?php print $nav_link['nav_cls']; ?>">
+                      <a href="<?php print $nav_link['link']; ?>" data-href="<?php print $nav_link['ajax-link']; ?>">
+                        <div class="icon--wrap">
+                          <img src="/theme/img/icons/<?php print $nav_link['icon']; ?>" alt="<?php print $nav_link['text']; ?>" title="<?php print $nav_link['text']; ?>" />
+                        </div>
+                        <div class="text--wrap">
+                          <?php print $nav_link['text']; ?>
+                        </div>
+                      </a>
+                    </li>
+                  <?php } ?>
                 <?php } ?>
               </ul>
             </nav>
