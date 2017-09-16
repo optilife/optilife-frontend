@@ -6,6 +6,7 @@ $(document).ready(function() {
   //----- Configuration.
 
   var fancyInputs = 'input[type=text],input[type=password],input[type=email],input[type=number],input[type=date]';
+  var $pageTitle = $('title');
   var $pageContent = $('#page-content');
 
 
@@ -31,6 +32,29 @@ $(document).ready(function() {
 
     return Math.floor(Math.random()*(max-min+1)+min);
   }
+
+
+  //----- History Loader.
+
+  if (typeof history.state == 'undefined' || history.state == null) {
+    history.replaceState({
+      title : $pageTitle.html(),
+      html  : $pageContent.html(),
+      path  : document.location.href
+    }, $pageTitle.html(), document.location.href);
+  }
+
+  $(window).bind('popstate', function(e) {
+    var state = e.originalEvent.state;
+
+    if (typeof state == 'undefined' || state == null) {
+      return;
+    }
+
+    $pageTitle.html(state.title);
+    $pageContent.html(state.html);
+    parseHtml($pageContent);
+  });
 
 
   //----- Ajax helper.
@@ -151,9 +175,15 @@ $(document).ready(function() {
       var ajaxUrl = $this.attr('data-href');
 
       $.get(ajaxUrl, function(data) {
-        var content = data.content;
-        $pageContent.html(content);
+        $pageTitle.html(data.title);
+        $pageContent.html(data.html);
         parseHtml($pageContent);
+
+        history.pushState({
+          title   : data.title,
+          html    : data.html,
+          ajaxUrl : ajaxUrl
+        }, data.title, data.path);
       });
 
       e.preventDefault();

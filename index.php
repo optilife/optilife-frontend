@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>OptiLife</title>
+    <title>OptiLife - <?php print $page_title; ?></title>
     <link rel="stylesheet" href="/theme/vendor/css/html5reset-1.6.1.css" media="all" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Montserrat:600,600i">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />

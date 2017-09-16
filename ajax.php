@@ -17,11 +17,17 @@
   if (!empty($page_template) && file_exists($page_template)) {
     $content = parse_file($page_template);
   } else {
-    $content = parse_file('pages/login.php');
+    $page_template = 'pages/login.php';
+    $content = parse_file($page_template);
   }
 
+  $file_parts = pathinfo($page_template);
+  $page_key = $file_parts['filename'];
+
   $page = [
-    'content' => $content,
+    'path' => $page_links[$page_key]['link'],
+    'title' => $page_links[$page_key]['text'],
+    'html' => $content,
   ];
 
   print json_encode($page);
