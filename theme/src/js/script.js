@@ -1,6 +1,15 @@
 'use strict';
 
 $(document).ready(function() {
+
+
+  //----- Configuration.
+
+  var fancyInputs = 'input[type=text],input[type=password],input[type=email]';
+
+
+  //----- Helper functions.
+
   function checkInputContent(input, reset) {
     var $input = $(input);
 
@@ -16,12 +25,12 @@ $(document).ready(function() {
   }
 
   // Init fields on page load.
-  $('input[type=text],input[type=password]').each(function() {
+  $(fancyInputs).each(function() {
     checkInputContent(this, true);
   });
 
   // Update fields on focus out.
-  $('input[type=text],input[type=password]').focusout(function() {
+  $(fancyInputs).focusout(function() {
     checkInputContent(this, false);
   })
 

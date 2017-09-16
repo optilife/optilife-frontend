@@ -10,11 +10,8 @@ form {
       display: block;
       font-family: $font-lato;
       font-size: 1rem;
+      letter-spacing: 0.5px;
       padding-bottom: 0.25rem;
-
-      &:after {
-        content: ':';
-      }
     }
   }
 
@@ -38,7 +35,8 @@ form {
 
   // Label animation.
   input[type="text"],
-  input[type="password"] {
+  input[type="password"],
+  input[type="email"] {
     background-color: transparent;
     border: none;
     border-bottom: 1px solid $color-grey-lighter;
@@ -103,6 +101,14 @@ form {
   // Other form items spacing.
   .form-item + .form-item {
     margin-top: 1.75rem;
+  }
+
+  .form-item + .form-item__standard {
+    margin-top: 1.25rem;
+  }
+
+  .form-item__standard + .form-item {
+    margin-top: 2rem;
   }
 
   // Form actions spacing.

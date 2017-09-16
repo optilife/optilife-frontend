@@ -29,6 +29,12 @@
         </select>
       </div>
 
+      <div class="form-item">
+        <input id="email" type="email" name="email" value="dpacassi@gmail.com" />
+        <label for="email">E-Mail</label>
+        <span class="focus-border"></span>
+      </div>
+
       <div class="form-actions">
         <input id="submit" type="submit" value="Update" class="button button-primary" />
       </div>
