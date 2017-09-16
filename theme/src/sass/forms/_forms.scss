@@ -3,16 +3,71 @@
 //-----------------------------------------------------------------------------
 
 form {
-  // Label styling.
-  label {
-    &:after {
-      content: ':';
+  // Label animation.
+  input[type="text"],
+  input[type="password"] {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $color-grey-lighter;
+    color: $color-black;
+    font-family: $font-lato;
+    letter-spacing: 1px;
+    padding: 0.25rem 0;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus ~ .focus-border {
+      background-color: $color-blue;
+      bottom: 0;
+      height: 2px;
+      left: 0;
+      position: absolute;
+      width: 0;
+      @include prefix((transition: $transition-linear));
+    }
+
+    &:focus ~ .focus-border,
+    &.has-content ~ .focus-border {
+      width: 100%;
+    }
+
+    & ~ label {
+      color: $color-grey;
+      font-family: $font-lato;
+      left: 0;
+      letter-spacing: 0.5px;
+      position: absolute;
+      top: 9px;
+      @include prefix((transition: $transition-linear));
+      width: 100%;
+      z-index: -1;
+    }
+
+    &:focus ~ label,
+    &.has-content ~ label {
+      color: $color-blue;
+      font-size: 0.75rem;
+      top: -1rem;
     }
   }
 
-  // Form item spacing.
-  .form-item + .form-item,
+  // First form item spacing.
+  .form-item {
+    position: relative;
+    margin-top: 1.25rem;
+    max-width: 32rem;
+  }
+
+  // Other form items spacing.
+  .form-item + .form-item {
+    margin-top: 1.75rem;
+  }
+
+  // Form actions spacing.
   .form-actions {
-    margin-top: 0.75rem;
+    margin-top: 1.25rem;
   }
 }

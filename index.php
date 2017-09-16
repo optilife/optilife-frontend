@@ -4,7 +4,7 @@
   <head>
     <title>optilife.pacassi.ch</title>
     <link rel="stylesheet" href="/theme/vendor/css/html5reset-1.6.1.css" media="all" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:600,600i">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Montserrat:600,600i">
     <link rel="stylesheet" href="/theme/dist/css/style.css" media="all" />
   </head>
 

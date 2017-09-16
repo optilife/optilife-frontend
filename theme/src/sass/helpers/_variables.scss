@@ -7,9 +7,18 @@ $color-white: #ffffff;
 $color-black: #000000;
 
 $color-light-blue: #199ed9;
+$color-blue: #3399ff;
+
+$color-grey-lighter: #cccccc;
+$color-grey: #aaaaaa;
 
 // Fonts.
+$font-lato: 'Lato', sans-serif;
 $font-montserrat: 'Montserrat', sans-serif;
+
+// Transitions.
+$transition-linear: all .35s linear;
+
 
 //-----------------------------------------------------------------------------
 // Sizes (Desktop First).
