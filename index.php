@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Montserrat:600,600i">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/theme/dist/css/style.css" media="all" />
+    <link rel="shortcut icon" href="/favicon.png" type="image/png" />
   </head>
 
   <body class="<?php print $page_body_cls; ?>">
