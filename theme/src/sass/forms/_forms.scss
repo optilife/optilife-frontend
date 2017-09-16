@@ -3,6 +3,15 @@
 //-----------------------------------------------------------------------------
 
 form {
+  .form-actions {
+    opacity: 1;
+    @include prefix((transition: $transition-linear));
+  }
+
+  &.readonly .form-actions {
+    opacity: 0;
+  }
+
   // Standard labels.
   .form-item__standard {
     label {

@@ -189,8 +189,13 @@ $(document).ready(function() {
     $(context).find('#user-login-form').ajaxForm({
       url: 'ajax.php?action=login',
       type: 'post',
+      beforeSubmit: function(arr, form) {
+        $logo.addClass('spin');
+        $(form).addClass('readonly');
+      },
       success: function(data) {
         ajaxPageCallback(data, 'ajax.php?action=login');
+        $(this).removeClass('readonly');
       }
     });
 
