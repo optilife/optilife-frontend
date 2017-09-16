@@ -9,18 +9,32 @@
       'text' => 'Log in',
       'template' => 'pages/login.php',
       'body_cls' => 'page-login',
+      'nav_cls' => 'menu-item menu-item--login',
+      'icon' => 'login.svg',
     ],
     'upload' => [
       'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/',
       'text' => 'Upload',
       'template' => 'pages/upload.php',
       'body_cls' => 'page-upload',
+      'nav_cls' => 'menu-item menu-item--upload',
+      'icon' => 'upload.svg',
     ],
     'profile' => [
       'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/',
       'text' => 'Profile',
       'template' => 'pages/profile.php',
       'body_cls' => 'page-profile',
+      'nav_cls' => 'menu-item menu-item--profile',
+      'icon' => 'profile.svg',
+    ],
+    'logout' => [
+      'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/',
+      'text' => 'Log out',
+      'template' => 'pages/profile.php',
+      'body_cls' => 'page-profile',
+      'nav_cls' => 'menu-item menu-item--logout',
+      'icon' => 'logout.svg',
     ],
   ];
 

@@ -5,6 +5,7 @@
 header {
   background-color: $color-primary;
   color: $color-white;
+  z-index: $z-index-header;
 
   #logo {
     display: inline-block;

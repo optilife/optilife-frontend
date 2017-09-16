@@ -1,0 +1,38 @@
+//-----------------------------------------------------------------------------
+// Components: Navigation.
+//-----------------------------------------------------------------------------
+
+aside {
+  background-color: $color-primary;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: $z-index-navigation;
+
+  nav {
+    .menu-item {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+
+      a {
+        border-bottom: solid 1px $color-white;
+        color: $color-white;
+        display: block;
+        font-family: $font-lato;
+        height: 128px;
+        padding: 16px 0;
+        text-decoration: none;
+        width: 128px;
+
+        .icon--wrap {
+          img {
+            width: 64px;
+          }
+        }
+      }
+    }
+  }
+}
