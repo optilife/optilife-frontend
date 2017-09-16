@@ -11,7 +11,7 @@
   <body class="<?php print $page_body_cls; ?>">
     <div id="body__inner">
       <header>
-        <div id="header_inner">
+        <div id="header_inner" class="content">
           <div id="logo">
             <a href="/" title="Home" rel="home" class="site-logo">
               <img src="/theme/img/optilife.png" alt="OptiLife" title="OptiLife" />

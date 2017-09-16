@@ -2,8 +2,7 @@
 // Base: Wrappers.
 //-----------------------------------------------------------------------------
 
-#header_inner,
-#main__inner {
+.content {
   margin: 0 auto;
   max-width: $content-wrap-max-width;
 }
