@@ -29,6 +29,10 @@ form {
       @include prefix((transition: $transition-linear));
     }
 
+    &:not(:focus).has-content {
+      border-bottom: 1px solid $color-black;
+    }
+
     &:focus ~ .focus-border,
     &.has-content ~ .focus-border {
       width: 100%;
