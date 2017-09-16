@@ -8,7 +8,7 @@
 
         <div class="form-item form-item__standard">
           <label for="image">Image</label>
-          <input id="image" type="file" name="image" value="" />
+          <input id="image" type="file" name="image" />
         </div>
       </fieldset>
 

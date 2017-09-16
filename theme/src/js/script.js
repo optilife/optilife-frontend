@@ -190,6 +190,7 @@ $(document).ready(function() {
     //----- Ajax forms.
 
     $(context).find('#user-login-form').ajaxForm({
+      cache: false,
       url: 'ajax.php?action=login',
       type: 'post',
       beforeSubmit: function(arr, form) {
@@ -204,7 +205,24 @@ $(document).ready(function() {
 
         ajaxPageCallback(data, 'ajax.php?action=login');
         $(this).removeClass('readonly');
-    }});
+      }});
+
+    $(context).find('#user-upload-form').ajaxForm({
+      cache: false,
+      url: 'ajax.php?action=upload',
+      type: 'post',
+      beforeSubmit: function(arr, form) {
+        $logo.addClass('spin');
+        $(form).addClass('readonly');
+      },
+      success: function(data) {
+        if (data.args.hasOwnProperty('success')) {
+          // Upload was successful.
+        }
+
+        ajaxPageCallback(data, 'ajax.php?action=upload');
+        $(this).removeClass('readonly');
+      }});
 
 
     //----- Ajax behavior.

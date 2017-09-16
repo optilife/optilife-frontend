@@ -50,6 +50,40 @@
       // Log out - destroy the session.
       session_destroy();
       $additional_args['logout'] = true;
+    } else if ($_GET['action'] == 'upload') {
+      if (isset($_FILES['image'])) {
+        $check = getimagesize($_FILES['image']['tmp_name']);
+
+        if ($check !== false) {
+          $image_type = pathinfo($_FILES['image']['tmp_name'], PATHINFO_EXTENSION);
+          $image_data = file_get_contents($_FILES['image']['tmp_name']);
+          $image_base64 = 'data:image/' . $image_type . ';base64,' . base64_encode($image_data);
+          $additional_args['image'] = $image_base64;
+
+          // Send the image to the python backend.
+          $python_url = 'food/';
+          $python_method = 'POST';
+          $python_client = new GuzzleHttp\Client([
+            'base_uri' => $python_base_url,
+          ]);
+          $python_response = $python_client->post($python_url, [
+            'json' => [
+              'image' => $image_base64,
+            ],
+          ]);
+          $response_object = json_decode($python_response->getBody(), true);
+          $additional_args['foodLabels'] = $response_object;
+
+          // Redirect the user to the dashboard.
+          $page_title = $page_links['dashboard']['text'];
+          $page_template = $page_links['dashboard']['template'];
+          $page_body_cls = $page_links['dashboard']['body_cls'];
+        } else {
+          $_SESSION['error_message'] = 'Please upload an image.';
+        }
+      } else {
+        $_SESSION['error_message'] = 'Please upload an image.';
+      }
     }
   }
 
