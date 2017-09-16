@@ -14,6 +14,18 @@ form {
     }
   }
 
+  // Read only fields.
+  .form-item__readonly {
+    input {
+      color: $color-grey !important;
+      border-bottom: 1px solid $color-grey-lighter !important;
+
+      &:focus ~ .focus-border {
+        display: none;
+      }
+    }
+  }
+
   // Label animation.
   input[type="text"],
   input[type="password"] {

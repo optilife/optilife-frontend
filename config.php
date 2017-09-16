@@ -16,6 +16,12 @@
       'template' => 'pages/upload.php',
       'body_cls' => 'page-upload',
     ],
+    'profile' => [
+      'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/',
+      'text' => 'Profile',
+      'template' => 'pages/profile.php',
+      'body_cls' => 'page-profile',
+    ],
   ];
 
   // Define navigation.
