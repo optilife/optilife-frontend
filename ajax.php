@@ -44,6 +44,10 @@
       } else {
         $_SESSION['error_message'] = 'The username and password you entered did not match our records.';
       }
+    } else if ($_GET['action'] == 'logout') {
+      // Log out - destroy the session.
+      session_destroy();
+      $additional_args['logout'] = true;
     }
   }
 
@@ -58,9 +62,17 @@
   $file_parts = pathinfo($page_template);
   $page_key = $file_parts['filename'];
 
+  if ($page_key == 'login') {
+    $path = $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=login';
+    $title = 'Login';
+  } else {
+    $path = $page_links[$page_key]['link'];
+    $title = $page_links[$page_key]['text'];
+  }
+
   $page = [
-    'path' => $page_links[$page_key]['link'],
-    'title' => 'OptiLife - ' . $page_links[$page_key]['text'],
+    'path' => $path,
+    'title' => 'OptiLife - ' . $title,
     'html' => $content,
     'args' => $additional_args,
   ];

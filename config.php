@@ -10,15 +10,6 @@
 
   // Define pages.
   $page_links = [
-    'login' => [
-      'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=login',
-      'ajax-link' => $base_ajax_url . '?page=login',
-      'text' => 'Log in',
-      'template' => 'pages/login.php',
-      'body_cls' => 'page-login',
-      'nav_cls' => 'menu-item menu-item--login',
-      'icon' => 'login.svg',
-    ],
     'dashboard' => [
       'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=dashboard',
       'ajax-link' => $base_ajax_url . '?page=dashboard',
@@ -48,7 +39,7 @@
     ],
     'logout' => [
       'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=logout',
-      'ajax-link' => $base_ajax_url . '?page=logout',
+      'ajax-link' => $base_ajax_url . '?action=logout',
       'text' => 'Log out',
       'template' => 'pages/profile.php',
       'body_cls' => 'page-profile',
@@ -71,9 +62,9 @@
 
   // By default, show the log in page.
   if (empty($page_template)) {
-    $page_title = $page_links['login']['text'];
-    $page_template = $page_links['login']['template'];
-    $page_body_cls = $page_links['login']['body_cls'];
+    $page_title = 'Login';
+    $page_template = 'pages/login.php';
+    $page_body_cls = 'page-login';
   }
 
   // Require composer's autoloader.

@@ -47,6 +47,9 @@ $(document).ready(function() {
       html    : data.html,
       ajaxUrl : ajaxUrl
     }, data.title, data.path);
+
+    // Init ShareThis buttons.
+    window.__sharethis__.initialize();
   }
 
 
@@ -194,10 +197,14 @@ $(document).ready(function() {
         $(form).addClass('readonly');
       },
       success: function(data) {
+        if (data.args.hasOwnProperty('uid')) {
+          // Login was successful, save our user id.
+          Cookies.set('uid', data.args.uid);
+        }
+
         ajaxPageCallback(data, 'ajax.php?action=login');
         $(this).removeClass('readonly');
-      }
-    });
+    }});
 
 
     //----- Ajax behavior.
@@ -210,12 +217,24 @@ $(document).ready(function() {
       $pageContent.fadeOut(500);
 
       $.get(ajaxUrl, function(data) {
+        if (data.args.hasOwnProperty('logout')) {
+          // The user wants to log out, remove the uid cookie.
+          Cookies.remove('uid');
+        }
+
         ajaxPageCallback(data, ajaxUrl);
       });
 
       e.preventDefault();
       return false;
     });
+
+    // Finally, check if the user is logged in.
+    if (typeof Cookies.get('uid') != 'undefined') {
+      $('body').addClass('user-logged-in');
+    } else {
+      $('body').removeClass('user-logged-in');
+    }
   }
 
   parseHtml('html');

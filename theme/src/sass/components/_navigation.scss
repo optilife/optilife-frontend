@@ -13,6 +13,7 @@ aside {
 
   nav {
     border-top: solid 1px $color-white;
+    display: none;
 
     .menu-item {
       align-items: center;
@@ -48,4 +49,8 @@ aside {
       }
     }
   }
+}
+
+.user-logged-in aside nav {
+  display: block;
 }
