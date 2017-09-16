@@ -38,6 +38,8 @@
           $page_template = $page_links['dashboard']['template'];
           $page_body_cls = $page_links['dashboard']['body_cls'];
           $additional_args['uid'] = $response_object;
+
+          $_SESSION['uid'] = $response_object;
         } else {
           $_SESSION['error_message'] = 'The username and password you entered did not match our records.';
         }

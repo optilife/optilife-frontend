@@ -72,3 +72,12 @@
 
   // Python backend configuration.
   $python_base_url = 'http://optilife.pacassi.ch:5000/api/';
+
+  // Set logo url.
+  if (isset($_SESSION['uid'])) {
+    $logo_url = $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=dashboard';
+    $logo_data_url = $protocol . '://' . $_SERVER['SERVER_NAME'] . '/ajax.php?page=dashboard';
+  } else {
+    $logo_url = $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=login';
+    $logo_data_url = $protocol . '://' . $_SERVER['SERVER_NAME'] . '/ajax.php?page=login';
+  }

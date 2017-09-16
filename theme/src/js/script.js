@@ -232,8 +232,24 @@ $(document).ready(function() {
     // Finally, check if the user is logged in.
     if (typeof Cookies.get('uid') != 'undefined') {
       $('body').addClass('user-logged-in');
+
+      // Temporary Hotfix.
+      var logoUrl = $('a.site-logo').attr('href');
+      var logoAjaxUrl = $('a.site-logo').attr('data-href');
+      logoUrl = logoUrl.replace('login', 'dashboard');
+      logoAjaxUrl = logoAjaxUrl.replace('login', 'dashboard');
+      $('a.site-logo').attr('href', logoUrl);
+      $('a.site-logo').attr('data-href', logoAjaxUrl);
     } else {
       $('body').removeClass('user-logged-in');
+
+      // Temporary Hotfix.
+      var logoUrl = $('a.site-logo').attr('href');
+      var logoAjaxUrl = $('a.site-logo').attr('data-href');
+      logoUrl = logoUrl.replace('dashboard', 'login');
+      logoAjaxUrl = logoAjaxUrl.replace('dashboard', 'login');
+      $('a.site-logo').attr('href', logoUrl);
+      $('a.site-logo').attr('data-href', logoAjaxUrl);
     }
   }
 
