@@ -8,6 +8,7 @@ $(document).ready(function() {
   var fancyInputs = 'input[type=text],input[type=password],input[type=email],input[type=number],input[type=date]';
   var $pageTitle = $('title');
   var $pageContent = $('#page-content');
+  var $logo = $('#logo svg');
 
 
   //----- Helper functions.
@@ -174,13 +175,16 @@ $(document).ready(function() {
       var $this = $(this);
       var ajaxUrl = $this.attr('data-href');
 
+      $logo.addClass('spin');
       $pageContent.fadeOut(500);
 
       $.get(ajaxUrl, function(data) {
         $pageTitle.html(data.title);
         $pageContent.html(data.html);
         parseHtml($pageContent);
-        $pageContent.fadeIn(500);
+        $pageContent.fadeIn(500, function() {
+          $logo.removeClass('spin');
+        });
 
         history.pushState({
           title   : data.title,

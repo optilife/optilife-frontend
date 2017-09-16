@@ -17,7 +17,7 @@
 
           <aside>
             <div id="logo">
-              <a href="/" title="Home" rel="home" class="site-logo">
+              <a href="/" data-href="<?php print $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=upload'; ?>" data-href="<?php print $protocol . '://' . $_SERVER['SERVER_NAME'] . '/ajax.php?page=login'; ?>" title="Home" rel="home" class="site-logo">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 435.81 435.81"><defs><style>.cls-1{fill:#fff;}.cls-1,.cls-4{stroke:#15e5ff;}.cls-1,.cls-2,.cls-3,.cls-4{stroke-miterlimit:10;}.cls-2,.cls-3{fill:#199ed9;stroke:#fff;}.cls-3{stroke-width:2px;}.cls-4{fill:#fff;}</style></defs><title>Logo1</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><circle class="cls-1" cx="217.9" cy="217.9" r="217.4"/><circle class="cls-2" cx="173.6" cy="155.59" r="88.93"/><rect class="cls-3" x="223.62" y="193.1" width="45.98" height="176.04" rx="12" ry="12"/><rect class="cls-3" x="270.07" y="323.37" width="81.06" height="45.77" rx="12" ry="12"/><circle class="cls-4" cx="173.6" cy="155.59" r="37.51"/></g></g></svg>
               </a>
             </div>
