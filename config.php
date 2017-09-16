@@ -4,13 +4,21 @@
 
   // Define pages.
   $page_links = [
-    'home' => [
+    'login' => [
       'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=login',
       'text' => 'Log in',
       'template' => 'pages/login.php',
       'body_cls' => 'page-login',
       'nav_cls' => 'menu-item menu-item--login',
       'icon' => 'login.svg',
+    ],
+    'dashboard' => [
+      'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=dashboard',
+      'text' => 'Dashboard',
+      'template' => 'pages/dashboard.php',
+      'body_cls' => 'page-dashboard',
+      'nav_cls' => 'menu-item menu-item--dashboard',
+      'icon' => 'dashboard.svg',
     ],
     'upload' => [
       'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=upload',
@@ -52,7 +60,7 @@
 
   // By default, show the log in page.
   if (empty($page_template)) {
-    $page_title = $page_links['home']['text'];
-    $page_template = $page_links['home']['template'];
-    $page_body_cls = $page_links['home']['body_cls'];
+    $page_title = $page_links['login']['text'];
+    $page_template = $page_links['login']['template'];
+    $page_body_cls = $page_links['login']['body_cls'];
   }
