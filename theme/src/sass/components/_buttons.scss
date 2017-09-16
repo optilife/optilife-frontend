@@ -14,6 +14,7 @@
   font-style: italic;
   line-height: 1;
   padding: 0.75rem 2rem;
+  text-decoration: none;
   text-transform: uppercase;
   @include prefix((transition: $transition-ease-in-out));
 
@@ -25,6 +26,17 @@
       background-color: $color-white;
       border-color: $color-black;
       color: $color-black;
+    }
+  }
+
+  &.button-add {
+    background-color: $color-green;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-white;
+      border-color: $color-green;
+      color: $color-green;
     }
   }
 }

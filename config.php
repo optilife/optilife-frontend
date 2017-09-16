@@ -22,7 +22,7 @@
     ],
     'upload' => [
       'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=upload',
-      'text' => 'Upload',
+      'text' => 'Add data',
       'template' => 'pages/upload.php',
       'body_cls' => 'page-upload',
       'nav_cls' => 'menu-item menu-item--upload',

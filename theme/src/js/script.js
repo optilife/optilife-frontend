@@ -39,4 +39,18 @@ $(document).ready(function() {
     minimumResultsForSearch: -1,
     width: '100%'
   });
+
+  // Init easypiechart.
+
+  var easyPieOptions = {
+    scaleColor: false,
+    trackColor: '#E7F7F5',
+    barColor: 'rgba(51,153,255,0.8)',
+    lineWidth: 6,
+    lineCap: 'butt',
+    size: 95,
+    animate: 1000
+  };
+
+  $('.statistic').easyPieChart(easyPieOptions);
 });

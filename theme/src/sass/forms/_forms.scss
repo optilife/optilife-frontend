@@ -117,20 +117,20 @@ form {
   .form-actions {
     margin-top: 1.25rem;
   }
+}
 
-  // Fieldsets.
-  fieldset {
-    border: solid 1px $color-black;
-    padding: 0.5rem 1rem 1.25rem;
-  }
+// Fieldsets.
+fieldset {
+  border: solid 1px $color-black;
+  padding: 0.5rem 1rem 1.25rem;
+}
 
-  fieldset + fieldset {
-    margin-top: 1.5rem;
-  }
+* + fieldset {
+  margin-top: 1.5rem;
+}
 
-  legend {
-    color: $color-black;
-    font-family: $font-lato;
-    padding: 0 0.5rem;
-  }
+legend {
+  color: $color-black;
+  font-family: $font-lato;
+  padding: 0 0.5rem;
 }
