@@ -22,6 +22,40 @@
       <div class="statistic statistic--lines-2" data-percent="15"><span>15%</span>save<br />potential</div>
     </fieldset>
 
+    <div class="active-challenges">
+      <h2>Active challenges</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Challenger overall score</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Axel Uran</td>
+              <td>70.1</td>
+              <td class="winning">Winning</td>
+            </tr>
+            <tr>
+              <td>Arik Sidney</td>
+              <td>85.7</td>
+              <td class="winning">Winning</td>
+            </tr>
+            <tr>
+              <td>Luca Christen</td>
+              <td>90.9</td>
+              <td class="losing">Losing</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
     <div class="challenge">
       <h2>Challenge friends!</h2>
 

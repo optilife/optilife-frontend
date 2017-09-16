@@ -38,7 +38,8 @@
 
 @import 'components/buttons';
 @import 'components/navigation';
-@import 'components/statistic';
+@import 'components/statistics';
+@import 'components/tables';
 
 
 //-----------------------------------------------------------------------------
@@ -52,4 +53,5 @@
 // Pages.
 //-----------------------------------------------------------------------------
 
+@import 'pages/dashboard';
 @import 'pages/login';
