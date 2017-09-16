@@ -60,11 +60,17 @@
     }
   }
 
-  // By default, show the log in page.
+  // By default, show the log in page or the dashboard.
   if (empty($page_template)) {
-    $page_title = 'Login';
-    $page_template = 'pages/login.php';
-    $page_body_cls = 'page-login';
+    if (isset($_SESSION['uid'])) {
+      $page_title = 'Dashboard';
+      $page_template = 'pages/dashboard.php';
+      $page_body_cls = 'page-dashboard';
+    } else {
+      $page_title = 'Login';
+      $page_template = 'pages/login.php';
+      $page_body_cls = 'page-login';
+    }
   }
 
   // Require composer's autoloader.

@@ -57,7 +57,7 @@
         if ($check !== false) {
           $image_type = pathinfo($_FILES['image']['tmp_name'], PATHINFO_EXTENSION);
           $image_data = file_get_contents($_FILES['image']['tmp_name']);
-          $image_base64 = 'data:image/' . $image_type . ';base64,' . base64_encode($image_data);
+          $image_base64 = base64_encode($image_data);
           $additional_args['image'] = $image_base64;
 
           // Send the image to the python backend.
