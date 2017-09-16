@@ -2,6 +2,12 @@
   <div class="content">
     <h1>Dashboard</h1>
 
+    <?php if (!empty($_SESSION['success_message'])) { ?>
+      <div class="message success--message">
+        <?php print $_SESSION['success_message']; unset($_SESSION['success_message']); ?>
+      </div>
+    <?php } ?>
+
     <div class="form-actions">
       <a class="button button-add" href="<?php print $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=upload'; ?>" data-href="<?php print $protocol . '://' . $_SERVER['SERVER_NAME'] . '/ajax.php?page=upload'; ?>">
         Add data

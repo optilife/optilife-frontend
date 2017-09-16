@@ -74,6 +74,9 @@
           $response_object = json_decode($python_response->getBody(), true);
           $additional_args['foodLabels'] = $response_object;
 
+          // Set success message.
+          $_SESSION['success_message'] = 'Your image was successfully uploaded.';
+
           // Redirect the user to the dashboard.
           $page_title = $page_links['dashboard']['text'];
           $page_template = $page_links['dashboard']['template'];
