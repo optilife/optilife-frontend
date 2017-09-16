@@ -50,6 +50,9 @@
       // Log out - destroy the session.
       session_destroy();
       $additional_args['logout'] = true;
+      $page_title = 'Login';
+      $page_template = 'pages/login.php';
+      $page_body_cls = 'page-login';
     } else if ($_GET['action'] == 'upload') {
       if (isset($_FILES['image'])) {
         $check = getimagesize($_FILES['image']['tmp_name']);
