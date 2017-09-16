@@ -10,17 +10,23 @@
       'template' => 'pages/login.php',
       'body_cls' => 'page-login',
     ],
+    'upload' => [
+      'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/',
+      'text' => 'Upload',
+      'template' => 'pages/upload.php',
+      'body_cls' => 'page-upload',
+    ],
   ];
 
   // Define navigation.
   $nav_links = $page_links;
 
   // Define current page.
-  if (!empty($_GET['section'])) {
-    if (array_key_exists($_GET['section'], $page_links)) {
-      $page_title = $page_links[$_GET['section']]['text'];
-      $page_template = $page_links[$_GET['section']]['template'];
-      $page_body_cls = $page_links[$_GET['section']]['body_cls'];
+  if (!empty($_GET['page'])) {
+    if (array_key_exists($_GET['page'], $page_links)) {
+      $page_title = $page_links[$_GET['page']]['text'];
+      $page_template = $page_links[$_GET['page']]['template'];
+      $page_body_cls = $page_links[$_GET['page']]['body_cls'];
     }
   }
 

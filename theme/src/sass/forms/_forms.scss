@@ -3,6 +3,17 @@
 //-----------------------------------------------------------------------------
 
 form {
+  // Standard labels.
+  .form-item__standard {
+    label {
+      color: $color-primary-darker;
+
+      &:after {
+        content: ':';
+      }
+    }
+  }
+
   // Label animation.
   input[type="text"],
   input[type="password"] {
@@ -20,7 +31,7 @@ form {
     }
 
     &:focus ~ .focus-border {
-      background-color: $color-primary;
+      background-color: $color-primary-darker;
       bottom: 0;
       height: 2px;
       left: 0;
