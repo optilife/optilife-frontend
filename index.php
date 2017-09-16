@@ -67,6 +67,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=59bd16864e6a630011ca221c&product=inline-share-buttons"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha384-FzT3vTVGXqf7wRfy8k4BiyzvbNfeYjK+frTVqZeNDFl8woCbF0CYG6g2fMEFFo/i" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/theme/vendor/js/jquery.easypiechart.min.js"></script>
     <script type="text/javascript" src="/theme/dist/js/script.min.js"></script>
   </body>

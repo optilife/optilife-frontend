@@ -1,4 +1,9 @@
 <?php
+  // Start session.
+  if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+  }
+
   // Helper variables.
   $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? 'https' : 'http';
   $base_ajax_url = $protocol . '://' . $_SERVER['SERVER_NAME'] . '/ajax.php';
@@ -70,3 +75,9 @@
     $page_template = $page_links['login']['template'];
     $page_body_cls = $page_links['login']['body_cls'];
   }
+
+  // Require composer's autoloader.
+  require 'vendor/autoload.php';
+
+  // Python backend configuration.
+  $python_base_url = 'http://optilife.pacassi.ch:5000/api/';

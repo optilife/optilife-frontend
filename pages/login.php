@@ -2,6 +2,12 @@
   <div class="content">
     <h1>Log in</h1>
 
+    <?php if (!empty($_SESSION['error_message'])) { ?>
+      <div class="error-message">
+        <?php print $_SESSION['error_message']; unset($_SESSION['error_message']); ?>
+      </div>
+    <?php } ?>
+
     <form id="user-login-form" class="user-login-form" method="post" accept-charset="UTF-8">
       <fieldset>
         <legend>Optimize your life!</legend>

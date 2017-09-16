@@ -169,6 +169,13 @@ $(document).ready(function() {
     }
 
 
+    //----- Log in behavior.
+    $(context).find('#user-login-form').ajaxForm({
+      url: 'ajax.php?action=login',
+      type: 'post'
+    });
+
+
     //----- Ajax behavior.
 
     $(context).find('a[data-href]').on('click', function(e) {
