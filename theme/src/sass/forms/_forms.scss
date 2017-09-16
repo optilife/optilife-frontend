@@ -42,6 +42,11 @@ form {
     width: 100%;
   }
 
+  // File fields.
+  input[type=file] {
+    width: 100%;
+  }
+
   // Label animation.
   input[type="text"],
   input[type="password"],

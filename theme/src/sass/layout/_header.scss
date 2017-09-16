@@ -11,6 +11,12 @@ header {
     color: $color-white;
     padding: 21px 0 21px;
     text-transform: none;
+
+    @media screen and (max-width: $breakpoint-2) {
+      .slogan {
+        display: none;
+      }
+    }
   }
 
   #logo {

@@ -19,7 +19,7 @@
     <div id="body__inner">
       <header>
         <div id="header_inner" class="content">
-          <h1>OptiLife - Optimize your life!</h1>
+          <h1>OptiLife<span class="slogan"> - Optimize your life!</span></h1>
 
           <aside>
             <div id="logo">
