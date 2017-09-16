@@ -23,7 +23,7 @@
       <div class="statistic statistic--lines-2" data-percent="33"><span>33%</span>meals<br />tracked</div>
     </fieldset>
 
-    <fieldset>
+    <fieldset class="chartjs">
       <legend>Health comparation</legend>
 
       <canvas id="health-chart" width="400" height="150"></canvas>
@@ -36,7 +36,7 @@
       <div class="statistic statistic--lines-2" data-percent="15"><span>15%</span>save<br />potential</div>
     </fieldset>
 
-    <fieldset>
+    <fieldset class="chartjs">
       <legend>Finances comparation</legend>
 
       <canvas id="finances-chart" width="400" height="200"></canvas>

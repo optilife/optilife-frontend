@@ -3,6 +3,12 @@
 //-----------------------------------------------------------------------------
 
 .page-dashboard {
+  fieldset.chartjs {
+    @media screen and (max-width: $breakpoint-2) {
+      display: none;
+    }
+  }
+
   .active-challenges {
     margin-top: 2rem;
   }
