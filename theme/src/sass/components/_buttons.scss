@@ -15,7 +15,7 @@
   line-height: 1;
   padding: 0.75rem 2rem;
   text-transform: uppercase;
-  @include prefix((transition: all 0.3s ease-in-out 0s));
+  @include prefix((transition: $transition-ease-in-out));
 
   &.button-primary {
     background-color: $color-black;

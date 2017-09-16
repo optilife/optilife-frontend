@@ -5,7 +5,7 @@
   // Define pages.
   $page_links = [
     'home' => [
-      'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/',
+      'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=login',
       'text' => 'Log in',
       'template' => 'pages/login.php',
       'body_cls' => 'page-login',
@@ -13,7 +13,7 @@
       'icon' => 'login.svg',
     ],
     'upload' => [
-      'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/',
+      'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=upload',
       'text' => 'Upload',
       'template' => 'pages/upload.php',
       'body_cls' => 'page-upload',
@@ -21,7 +21,7 @@
       'icon' => 'upload.svg',
     ],
     'profile' => [
-      'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/',
+      'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=profile',
       'text' => 'Profile',
       'template' => 'pages/profile.php',
       'body_cls' => 'page-profile',
@@ -29,7 +29,7 @@
       'icon' => 'profile.svg',
     ],
     'logout' => [
-      'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/',
+      'link' => $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=logout',
       'text' => 'Log out',
       'template' => 'pages/profile.php',
       'body_cls' => 'page-profile',

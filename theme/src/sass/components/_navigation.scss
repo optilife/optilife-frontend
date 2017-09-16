@@ -26,6 +26,11 @@ aside {
         padding: 16px 0;
         text-decoration: none;
         width: 128px;
+        @include prefix((transition: $transition-ease-in-out));
+
+        &:hover {
+          background-color: $color-blue-lighter;
+        }
 
         .icon--wrap {
           img {

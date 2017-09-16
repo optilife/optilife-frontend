@@ -6,14 +6,15 @@
 $color-white: #ffffff;
 $color-black: #000000;
 
-$color-light-blue: #199ed9;
+$color-blue-lighter: #3fc4ff;
+$color-blue-light: #199ed9;
 $color-blue: #3399ff;
 
 $color-grey-lighter: #cccccc;
 $color-grey: #aaaaaa;
 
 // Main colors.
-$color-primary: $color-light-blue;
+$color-primary: $color-blue-light;
 $color-primary-darker: $color-blue;
 
 // Fonts.
@@ -22,6 +23,7 @@ $font-montserrat: 'Montserrat', sans-serif;
 
 // Transitions.
 $transition-linear: all .35s linear;
+$transition-ease-in-out: all .35s ease-in-out;
 
 // z-index values.
 $z-index-header: 100;
