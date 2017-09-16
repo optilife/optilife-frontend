@@ -16,6 +16,7 @@
   padding: 0.75rem 2rem;
   text-decoration: none;
   text-transform: uppercase;
+  vertical-align: top;
   @include prefix((transition: $transition-ease-in-out));
 
   &.button-primary {
@@ -38,5 +39,9 @@
       border-color: $color-green;
       color: $color-green;
     }
+  }
+
+  & + .button {
+    margin-left: 0.5rem;
   }
 }

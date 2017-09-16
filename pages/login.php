@@ -21,6 +21,7 @@
 
       <div class="form-actions">
         <input id="submit" type="submit" value="Log in" class="button button-primary" />
+        <a class="button button-add" href="<?php print $protocol . '://' . $_SERVER['SERVER_NAME'] . '/?page=login'; ?>" data-href="<?php print $protocol . '://' . $_SERVER['SERVER_NAME'] . '/ajax.php?page=login'; ?>">Register</a>
       </div>
     </form>
   </div>
