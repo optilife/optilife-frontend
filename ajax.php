@@ -26,8 +26,11 @@
 
   $page = [
     'path' => $page_links[$page_key]['link'],
-    'title' => $page_links[$page_key]['text'],
+    'title' => 'OptiLife - ' . $page_links[$page_key]['text'],
     'html' => $content,
   ];
+
+  // For smoothless animations.
+  usleep(500000);
 
   print json_encode($page);

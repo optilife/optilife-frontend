@@ -174,10 +174,13 @@ $(document).ready(function() {
       var $this = $(this);
       var ajaxUrl = $this.attr('data-href');
 
+      $pageContent.fadeOut(500);
+
       $.get(ajaxUrl, function(data) {
         $pageTitle.html(data.title);
         $pageContent.html(data.html);
         parseHtml($pageContent);
+        $pageContent.fadeIn(500);
 
         history.pushState({
           title   : data.title,
