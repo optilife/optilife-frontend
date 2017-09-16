@@ -17,6 +17,7 @@ $color-green: #168f48;
 $color-red: #ea6153;
 
 // Main colors.
+$color-primary-brighter: $color-blue-lighter;
 $color-primary: $color-blue-light;
 $color-primary-darker: $color-blue;
 
@@ -33,7 +34,8 @@ $z-index-header: 100;
 $z-index-navigation: 200;
 
 // Navigation settings.
-$nav-width: 128px;
+$nav-width: 96px;
+$icon-width: 48px;
 
 
 //-----------------------------------------------------------------------------

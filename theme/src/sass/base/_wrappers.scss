@@ -9,7 +9,7 @@
   max-width: $content-wrap-max-width;
 
   @media screen and (max-width: $breakpoint-2) {
-    padding-left: ($nav-width / 1.5) + 16px;
+    padding-left: $nav-width + 16px;
     padding-right: 16px;
   }
 }

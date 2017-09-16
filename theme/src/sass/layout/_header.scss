@@ -7,6 +7,12 @@ header {
   color: $color-white;
   z-index: $z-index-header;
 
+  h1 {
+    color: $color-white;
+    padding: 1rem 0;
+    text-transform: none;
+  }
+
   #logo {
     display: inline-block;
     padding: 8px 0 9px;
@@ -14,6 +20,11 @@ header {
     img {
       background-color: $color-white;
       border-radius: 100%;
+    }
+
+    svg {
+      height: $icon-width;
+      width: $nav-width;
     }
   }
 }

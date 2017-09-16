@@ -42,5 +42,9 @@ p {
 }
 
 @media screen and (max-width: $breakpoint-2) {
-  h1 { font-size: 1.875rem; }
+  h1 { font-size: 1.875rem; line-height: 1.1; }
+}
+
+@media screen and (max-width: $breakpoint-1) {
+  h1 { font-size: 1.565rem; line-height: 1.1; }
 }

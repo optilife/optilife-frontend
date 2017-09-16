@@ -12,6 +12,8 @@ aside {
   z-index: $z-index-navigation;
 
   nav {
+    border-top: solid 1px $color-white;
+
     .menu-item {
       align-items: center;
       display: flex;
@@ -32,16 +34,16 @@ aside {
         @media screen and (max-width: $breakpoint-2) {
           font-size: 0.8rem;
           height: $nav-width / 1.5;
-          width: $nav-width / 1.5;
+          padding: 8px 0;
         }
 
         &:hover {
-          background-color: $color-blue-lighter;
+          background-color: $color-primary-brighter;
         }
 
         .icon--wrap {
           img {
-            width: 64px;
+            width: $icon-width;
 
             @media screen and (max-width: $breakpoint-2) {
               width: 32px;
