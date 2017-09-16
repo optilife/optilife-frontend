@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>optilife.pacassi.ch</title>
+    <title>OptiLife</title>
     <link rel="stylesheet" href="/theme/vendor/css/html5reset-1.6.1.css" media="all" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Montserrat:600,600i">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
@@ -57,6 +57,7 @@
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=59bd16864e6a630011ca221c&product=inline-share-buttons"></script>
     <script type="text/javascript" src="/theme/vendor/js/jquery.easypiechart.min.js"></script>
     <script type="text/javascript" src="/theme/dist/js/script.min.js"></script>
   </body>

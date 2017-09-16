@@ -1,0 +1,17 @@
+//-----------------------------------------------------------------------------
+// Vendor: ShareThis.
+//-----------------------------------------------------------------------------
+
+.challenge {
+  margin-top: 2rem;
+
+  fieldset,
+  * + fieldset {
+    margin-top: 0.5rem;
+    padding-bottom: 1rem;
+    padding-top: 0.75rem;
+  }
+
+  .sharethis-inline-share-buttons {
+  }
+}

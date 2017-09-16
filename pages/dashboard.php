@@ -21,5 +21,14 @@
       <div class="statistic statistic--lines-2" data-percent="80"><span>80%</span>budget<br />used</div>
       <div class="statistic statistic--lines-2" data-percent="15"><span>15%</span>save<br />potential</div>
     </fieldset>
+
+    <div class="challenge">
+      <h2>Challenge friends!</h2>
+
+      <fieldset>
+        <legend>Spread the word</legend>
+        <div class="sharethis-inline-share-buttons" data-url="http://optilife.pacassi.ch/?page=challenge"></div>
+      </fieldset>
+    </div>
   </div>
 </section>
