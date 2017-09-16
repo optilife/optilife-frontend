@@ -37,6 +37,6 @@ $(document).ready(function() {
   // Init select fields.
   $('select').select2({
     minimumResultsForSearch: -1,
-    width: 'element'
+    width: '100%'
   });
 });

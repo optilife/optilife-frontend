@@ -7,7 +7,7 @@ aside {
   border-right: solid 1px $color-white;
   bottom: 0;
   left: 0;
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: $z-index-navigation;
 
@@ -29,6 +29,10 @@ aside {
         width: $nav-width;
         @include prefix((transition: $transition-ease-in-out));
 
+        @media screen and (max-width: $breakpoint-2) {
+          height: $nav-width / 1.5;
+        }
+
         &:hover {
           background-color: $color-blue-lighter;
         }
@@ -36,6 +40,10 @@ aside {
         .icon--wrap {
           img {
             width: 64px;
+
+            @media screen and (max-width: $breakpoint-2) {
+              width: 32px;
+            }
           }
         }
       }

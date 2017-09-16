@@ -3,7 +3,8 @@
 //-----------------------------------------------------------------------------
 
 .content {
-  padding-left: $nav-width;
+  padding-left: $nav-width + 32px;
+  padding-right: 32px;
   margin: 0 auto;
   max-width: $content-wrap-max-width;
 }

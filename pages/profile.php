@@ -35,6 +35,18 @@
         <span class="focus-border"></span>
       </div>
 
+      <div class="form-item">
+        <input id="password" type="password" name="password" value="" />
+        <label for="password">Change password</label>
+        <span class="focus-border"></span>
+      </div>
+
+      <div class="form-item">
+        <input id="password2" type="password" name="password2" value="" />
+        <label for="password2">Change password (repeat)</label>
+        <span class="focus-border"></span>
+      </div>
+
       <div class="form-actions">
         <input id="submit" type="submit" value="Update" class="button button-primary" />
       </div>
