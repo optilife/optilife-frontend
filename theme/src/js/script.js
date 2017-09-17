@@ -113,7 +113,9 @@ $(document).ready(function() {
     // Chart.js implementation.
     if (document.getElementById('finances-chart')) {
       var data = window.user_statistics || { "current" : [], "previous" : [] };
-      var tickCount = data["current"].length > data["previous"].length ? data["current"].length : data["previous"].length;
+      var tickCount = data["current"].length < data["previous"].length ? data["current"].length : data["previous"].length;
+      data['current'] = data['current'].slice(tickCount * -1);
+      data['previous'] = data['previous'].slice(tickCount * -1);
       var labels = [];
       for (var i = 0; i < tickCount; i++) {
         labels[i] = "";
