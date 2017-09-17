@@ -76,7 +76,7 @@
   if (!empty($_GET['page'])) {
     if ($_GET['page'] == 'dashboard') {
       // Get user statistics.
-      $python_url = 'food/log/' . _SESSION['uid'];
+      $python_url = 'food/log/' . $_SESSION['uid'];
       $python_method = 'GET';
       $python_client = new GuzzleHttp\Client([
         'base_uri' => $python_base_url,
