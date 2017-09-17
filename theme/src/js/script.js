@@ -113,6 +113,17 @@ $(document).ready(function() {
     // Chart.js implementation.
     if (document.getElementById('finances-chart')) {
       var data = window.user_statistics || { "current" : [], "previous" : [] };
+      var tickCount = max(data["current"].size, data["previous"].size)
+      var labels = []
+      for (var i = 0; i < tickCount; i++)
+        labels[i] = "";
+
+      if (tickCount >= 3) {
+          labels[0] = "Beginning";
+          labels[Math.round(tickCount / 2)] = "Middle";
+          labels[tickCount - 1] = "End";
+      }
+
       var healthCtx = document.getElementById('health-chart').getContext('2d');
       var financesCtx = document.getElementById('finances-chart').getContext('2d');
       var chartColorRed = 'rgb(255, 99, 132)';
@@ -120,7 +131,7 @@ $(document).ready(function() {
       var config = {
         type: 'line',
         data: {
-          labels: ['Beginning', 'Middle', 'End'],
+          labels: labels,
           datasets: [{
             label: 'Current month',
             backgroundColor: chartColorRed,
