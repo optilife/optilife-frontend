@@ -29,6 +29,8 @@
 
     <?php if (isset($_SESSION['user_health_index'])) { ?>
       <?php $user_health = $_SESSION['user_health_index']; ?>
+      <?php echo "<!--" . $user_health. "-->" ?>
+      <?php echo "<!-- HEALTH -->" ?>
 
       <fieldset>
         <legend>Health</legend>
