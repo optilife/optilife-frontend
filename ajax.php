@@ -129,6 +129,9 @@
         // Set success message.
         $_SESSION['success_message'] = 'Your entry has been successfully logged!';
 
+        // Init user data.
+        initUserData();
+
         // Redirect the user to the dashboard.
         $page_title = $page_links['dashboard']['text'];
         $page_template = $page_links['dashboard']['template'];
