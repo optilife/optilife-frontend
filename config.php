@@ -4,6 +4,12 @@
     session_start();
   }
 
+  // Require composer's autoloader.
+  require 'vendor/autoload.php';
+
+  // Python backend configuration.
+  $python_base_url = 'http://optilife.pacassi.ch:5000/api/';
+
   // Helper variables.
   $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? 'https' : 'http';
   $base_ajax_url = $protocol . '://' . $_SERVER['SERVER_NAME'] . '/ajax.php';
@@ -66,6 +72,19 @@
   // Define navigation.
   $nav_links = $page_links;
 
+  // Get user statistics.
+  if (!empty($_GET['page'])) {
+    if ($_GET['page'] == 'dashboard') {
+      // Get user statistics.
+      $python_url = 'food/log/' . $_SESSION['uid'];
+      $python_method = 'GET';
+      $python_client = new GuzzleHttp\Client([
+        'base_uri' => $python_base_url,
+      ]);
+      $_SESSION['user_statistics'] = $python_client->get($python_url)->getBody();
+    }
+  }
+
   // Define current page.
   if (!empty($_GET['page'])) {
     if (array_key_exists($_GET['page'], $page_links)) {
@@ -87,12 +106,6 @@
       $page_body_cls = 'page-login';
     }
   }
-
-  // Require composer's autoloader.
-  require 'vendor/autoload.php';
-
-  // Python backend configuration.
-  $python_base_url = 'http://optilife.pacassi.ch:5000/api/';
 
   // Set logo url.
   if (isset($_SESSION['uid'])) {

@@ -2,6 +2,19 @@
   <div class="content">
     <h1>Dashboard</h1>
 
+    <?php
+      // Provide the data to JS.
+      if (isset($_SESSION['user_statistics'])) {
+        $user_statistics = $_SESSION['user_statistics'];
+        $user_statistics = preg_replace('/\s+/', ' ', trim($user_statistics));
+        print '<script>';
+        print "window.user_statistics = '$user_statistics';";
+        print "window.user_statistics = JSON.parse(window.user_statistics);";
+        print '</script>';
+        unset($_SESSION['user_statistics']);
+      }
+    ?>
+
     <?php if (!empty($_SESSION['success_message'])) { ?>
       <div class="message success--message">
         <?php print $_SESSION['success_message']; unset($_SESSION['success_message']); ?>
