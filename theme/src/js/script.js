@@ -111,7 +111,7 @@ $(document).ready(function() {
     $(context).find('.statistic').easyPieChart(easyPieOptions);
 
     // Chart.js implementation.
-    if (document.getElementById('finances-chart')) {
+    if (document.getElementById('health-chart')) {
       var data = window.user_statistics || { "current" : [], "previous" : [] };
       var tickCount = data["current"].length < data["previous"].length ? data["current"].length : data["previous"].length;
       data['current'] = data['current'].slice(tickCount * -1);
