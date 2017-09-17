@@ -46,8 +46,8 @@
       <canvas id="health-chart" width="400" height="150"></canvas>
     </fieldset>
 
-    <?php if (isset($_SESSION['user'])) { ?>
-        <?php $user_budget = $_SESSION['user']; ?>
+    <?php if (isset($_SESSION['user_budget'])) { ?>
+        <?php $user_budget = $_SESSION['user_budget']; ?>
         <?php echo "<!--" . $user_budget . "-->" ?>
         <?php echo "<!--BUDGET-->" ?>
         <fieldset>
@@ -56,7 +56,7 @@
             <div class="statistic statistic--lines-2" data-percent="<?php print $user_budget; ?>"><span><?php print $user_budget; ?>%</span>budget<br />used</div>
             <div class="statistic statistic--lines-2" data-percent="15"><span>15%</span>save<br />potential</div>
         </fieldset>
-        <?php unset($_SESSION['user']); ?>
+        <?php unset($_SESSION['user_budget']); ?>
     <?php } ?>
 
     <div class="active-challenges">
