@@ -48,8 +48,6 @@
 
     <?php if (isset($_SESSION['user_budget'])) { ?>
         <?php $user_budget = $_SESSION['user_budget']; ?>
-        <?php echo "<!--" . $user_budget . "-->" ?>
-        <?php echo "<!--BUDGET-->" ?>
         <fieldset>
             <legend>Finances</legend>
 
