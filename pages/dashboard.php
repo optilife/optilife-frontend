@@ -3,7 +3,7 @@
     <h1>Dashboard</h1>
 
     <?php
-      // Provide the data to JS.
+      // Provide user data to JS.
       if (isset($_SESSION['user_statistics'])) {
         $user_statistics = $_SESSION['user_statistics'];
         $user_statistics = preg_replace('/\s+/', ' ', trim($user_statistics));
@@ -27,14 +27,19 @@
       </a>
     </div>
 
-    <fieldset>
-      <legend>Health</legend>
+    <?php if (isset($_SESSION['user_health_index'])) { ?>
+      <?php $user_health = $_SESSION['user_health_index']; ?>
 
-      <div class="statistic" data-percent="66"><span>1044</span>cals</div>
-      <div class="statistic statistic--lines-2" data-percent="80"><span>80%</span>health<br />score</div>
-      <div class="statistic statistic--lines-2" data-percent="100"><span>100%</span>challenges<br />won</div>
-      <div class="statistic statistic--lines-2" data-percent="33"><span>33%</span>meals<br />tracked</div>
-    </fieldset>
+      <fieldset>
+        <legend>Health</legend>
+
+        <div class="statistic statistic--lines-2" data-percent="<?php print $user_health['calories_today_percentage']; ?>"><span><?php print $user_health['calories_today']; ?></span>cals<br />today</div>
+        <div class="statistic statistic--lines-2" data-percent="<?php print $user_health['health-index']; ?>"><span><?php print $user_health['health-index']; ?>%</span>health<br />score</div>
+        <div class="statistic statistic--lines-2" data-percent="<?php print $user_health['challenges_won']; ?>"><span><?php print $user_health['challenges_won']; ?>%</span>challenges<br />won</div>
+        <div class="statistic statistic--lines-2" data-percent="<?php print $user_health['daily_goal']; ?>"><span><?php print $user_health['daily_goal']; ?>%</span>meals<br />tracked</div>
+      </fieldset>
+      <?php unset($_SESSION['user_health_index']); ?>
+    <?php } ?>
 
     <fieldset class="chartjs">
       <legend>Health comparation</legend>

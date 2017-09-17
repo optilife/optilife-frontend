@@ -82,6 +82,16 @@
         'base_uri' => $python_base_url,
       ]);
       $_SESSION['user_statistics'] = $python_client->get($python_url)->getBody();
+
+      // Get user health index.
+      $python_url = 'users/health-index/' . $_SESSION['uid'];
+      $python_method = 'GET';
+      $python_client = new GuzzleHttp\Client([
+        'base_uri' => $python_base_url,
+      ]);
+      $python_response = $python_client->get($python_url)->getBody();
+      $response_object = json_decode($python_response, true);
+      $_SESSION['user_health_index'] = $response_object;
     }
   }
 
