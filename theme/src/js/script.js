@@ -121,9 +121,6 @@ $(document).ready(function() {
         labels[i] = "";
       }
 
-      Console.log(tickCount, data);
-
-
       if (tickCount >= 3) {
         labels[0] = "Beginning";
         labels[Math.round(tickCount / 2)] = "Middle";
