@@ -1,4 +1,9 @@
 <?php
+  // Start session.
+  if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+  }
+
   // Require composer's autoloader.
   require 'vendor/autoload.php';
 
