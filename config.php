@@ -76,7 +76,7 @@
   if (!empty($_GET['page'])) {
     if ($_GET['page'] == 'dashboard') {
       // Get user statistics.
-      $python_url = 'food/log/' . $_SESSION['uid'];
+      $python_url = 'food/log/' . Cookie.get('uid');
       $python_method = 'GET';
       $python_client = new GuzzleHttp\Client([
         'base_uri' => $python_base_url,
@@ -84,7 +84,7 @@
       $_SESSION['user_statistics'] = $python_client->get($python_url)->getBody();
 
       // Get user health index.
-      $python_url = 'users/health-index/' . $_SESSION['uid'];
+      $python_url = 'users/health-index/' . Cookie.get('uid');
       $python_method = 'GET';
       $python_client = new GuzzleHttp\Client([
         'base_uri' => $python_base_url,
@@ -94,7 +94,7 @@
       $_SESSION['user_health_index'] = $response_object;
 
       // Get user budget spending.
-      $python_url = 'users/' . $_SESSION['uid'];
+      $python_url = 'users/' . Cookie.get('uid');
       $python_method = 'GET';
       $python_client = new GuzzleHttp\Client([
           'base_uri' => $python_base_url,
