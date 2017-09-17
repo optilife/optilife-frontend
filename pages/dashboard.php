@@ -54,12 +54,6 @@
       <div class="statistic statistic--lines-2" data-percent="15"><span>15%</span>save<br />potential</div>
     </fieldset>
 
-    <fieldset class="chartjs">
-      <legend>Finances comparation</legend>
-
-      <canvas id="finances-chart" width="400" height="200"></canvas>
-    </fieldset>
-
     <div class="active-challenges">
       <h2>Active challenges</h2>
 
