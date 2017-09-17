@@ -29,7 +29,7 @@
 
     <?php if (isset($_SESSION['user_health_index'])) { ?>
       <?php $user_health = $_SESSION['user_health_index']; ?>
-      <?php echo "<!--" . $user_health. "-->" ?>
+      <?php echo "<!--" . var_dump($user_health). "-->" ?>
       <?php echo "<!-- HEALTH -->" ?>
 
       <fieldset>
@@ -51,7 +51,7 @@
 
     <?php if (isset($_SESSION['user'])) { ?>
         <?php $user_budget = $_SESSION['user']; ?>
-        <?php echo "<!--" . $user_budget . "-->" ?>
+        <?php echo "<!--" . var_dump($user_budget) . "-->" ?>
         <?php echo "<!--trololo-->" ?>
         <fieldset>
             <legend>Finances</legend>
