@@ -113,15 +113,16 @@ $(document).ready(function() {
     // Chart.js implementation.
     if (document.getElementById('finances-chart')) {
       var data = window.user_statistics || { "current" : [], "previous" : [] };
-      var tickCount = max(data["current"].size, data["previous"].size)
-      var labels = []
-      for (var i = 0; i < tickCount; i++)
+      var tickCount = data["current"].length > data["previous"].length ? data["current"].length : data["previous"].length;
+      var labels = [];
+      for (var i = 0; i < tickCount; i++) {
         labels[i] = "";
+      }
 
       if (tickCount >= 3) {
-          labels[0] = "Beginning";
-          labels[Math.round(tickCount / 2)] = "Middle";
-          labels[tickCount - 1] = "End";
+        labels[0] = "Beginning";
+        labels[Math.round(tickCount / 2)] = "Middle";
+        labels[tickCount - 1] = "End";
       }
 
       var healthCtx = document.getElementById('health-chart').getContext('2d');
