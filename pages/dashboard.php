@@ -29,9 +29,6 @@
 
     <?php if (isset($_SESSION['user_health_index'])) { ?>
       <?php $user_health = $_SESSION['user_health_index']; ?>
-      <?php echo "<!--" . var_dump($user_health). "-->" ?>
-      <?php echo "<!-- HEALTH -->" ?>
-
       <fieldset>
         <legend>Health</legend>
 
@@ -51,12 +48,12 @@
 
     <?php if (isset($_SESSION['user'])) { ?>
         <?php $user_budget = $_SESSION['user']; ?>
-        <?php echo "<!--" . var_dump($user_budget) . "-->" ?>
-        <?php echo "<!--trololo-->" ?>
+        <?php echo "<!--" . $user_budget . "-->" ?>
+        <?php echo "<!--BUDGET-->" ?>
         <fieldset>
             <legend>Finances</legend>
 
-            <div class="statistic statistic--lines-2" data-percent="<?php print $user_budget.actual_budget; ?>"><span>100%</span>budget<br />used</div>
+            <div class="statistic statistic--lines-2" data-percent="<?php print $user_budget; ?>"><span><?php print $user_budget; ?>%</span>budget<br />used</div>
             <div class="statistic statistic--lines-2" data-percent="15"><span>15%</span>save<br />potential</div>
         </fieldset>
         <?php unset($_SESSION['user']); ?>
