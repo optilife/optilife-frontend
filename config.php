@@ -7,6 +7,9 @@
   // Python backend configuration.
   $python_base_url = 'http://optilife.pacassi.ch:5000/api/';
 
+  // Require composer's autoloader.
+  require 'vendor/autoload.php';
+
   // User data helper.
   if (!function_exists('initUserData')) {
     function initUserData() {
@@ -47,8 +50,8 @@
     }
   }
 
-  // Require composer's autoloader.
-  require 'vendor/autoload.php';
+  // HOTFIX: Always load user data.
+  initUserData();
 
   // Helper variables.
   $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? 'https' : 'http';
