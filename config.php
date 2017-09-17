@@ -4,11 +4,51 @@
     session_start();
   }
 
-  // Require composer's autoloader.
-  require 'vendor/autoload.php';
-
   // Python backend configuration.
   $python_base_url = 'http://optilife.pacassi.ch:5000/api/';
+
+  // User data helper.
+  if (!function_exists('initUserData')) {
+    function initUserData() {
+      global $python_base_url;
+
+      // Don't load user data if not logged in.
+      if (!isset($_SESSION['uid'])) {
+        return;
+      }
+
+      // Get user statistics.
+      $python_url = 'food/log/' . $_SESSION['uid'];
+      $python_method = 'GET';
+      $python_client = new GuzzleHttp\Client([
+        'base_uri' => $python_base_url,
+      ]);
+      $_SESSION['user_statistics'] = $python_client->get($python_url)->getBody();
+
+      // Get user health index.
+      $python_url = 'users/health-index/' . $_SESSION['uid'];
+      $python_method = 'GET';
+      $python_client = new GuzzleHttp\Client([
+        'base_uri' => $python_base_url,
+      ]);
+      $python_response = $python_client->get($python_url)->getBody();
+      $response_object = json_decode($python_response, true);
+      $_SESSION['user_health_index'] = $response_object;
+
+      // Get user budget spending.
+      $python_url = 'users/' . $_SESSION['uid'];
+      $python_method = 'GET';
+      $python_client = new GuzzleHttp\Client([
+        'base_uri' => $python_base_url,
+      ]);
+      $python_response = $python_client->get($python_url)->getBody();
+      $response_object = json_decode($python_response, true);
+      $_SESSION['user_budget'] = round(100 - ($response_object['actual_budget'] / $response_object['monthly_budget']) * 100);
+    }
+  }
+
+  // Require composer's autoloader.
+  require 'vendor/autoload.php';
 
   // Helper variables.
   $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ? 'https' : 'http';
@@ -76,6 +116,7 @@
   if (!empty($_GET['page'])) {
     if ($_GET['page'] == 'dashboard') {
       // Get user statistics.
+      initUserData($python_base_url);
       $python_url = 'food/log/' . $_SESSION['uid'];
       $python_method = 'GET';
       $python_client = new GuzzleHttp\Client([

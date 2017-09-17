@@ -38,13 +38,17 @@
         $response_object = json_decode($python_response->getBody(), true);
 
         if ($response_object !== false) {
+          // First, set the session uid.
+          $_SESSION['uid'] = $response_object;
+
+          // Secondly, load the user data.
+          initUserData();
+
           // Log the user in.
           $page_title = $page_links['dashboard']['text'];
           $page_template = $page_links['dashboard']['template'];
           $page_body_cls = $page_links['dashboard']['body_cls'];
           $additional_args['uid'] = $response_object;
-
-          $_SESSION['uid'] = $response_object;
         } else {
           $_SESSION['error_message'] = 'The username and password you entered did not match our records.';
         }
