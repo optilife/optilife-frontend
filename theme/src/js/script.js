@@ -112,6 +112,7 @@ $(document).ready(function() {
 
     // Chart.js implementation.
     if (document.getElementById('finances-chart')) {
+      var data = window.user_statistics || { "current" : [], "previous" : [] };
       var healthCtx = document.getElementById('health-chart').getContext('2d');
       var financesCtx = document.getElementById('finances-chart').getContext('2d');
       var chartColorRed = 'rgb(255, 99, 132)';
@@ -124,30 +125,14 @@ $(document).ready(function() {
             label: 'Current month',
             backgroundColor: chartColorRed,
             borderColor: chartColorRed,
-            data: [
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor()
-            ],
+            data: data["current"].map(function(x) { return x.health_value; }),
             fill: false
           }, {
             label: 'Previous month',
             fill: false,
             backgroundColor: chartColorBlue,
             borderColor: chartColorBlue,
-            data: [
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor(),
-              randomScalingFactor()
-            ]
+            data: data["previous"].map(function(x) { return x.health_value; }),
           }]
         },
         options: {
