@@ -141,10 +141,10 @@ $(document).ready(function() {
             fill: false
           }, {
             label: 'Previous month',
-            fill: false,
             backgroundColor: chartColorBlue,
             borderColor: chartColorBlue,
             data: data["previous"].map(function(x) { return x.health_value; }),
+            fill: false
           }]
         },
         options: {
