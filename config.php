@@ -92,6 +92,16 @@
       $python_response = $python_client->get($python_url)->getBody();
       $response_object = json_decode($python_response, true);
       $_SESSION['user_health_index'] = $response_object;
+
+      // Get user budget spending.
+      $python_url = 'users/' . $_SESSION['uid'];
+      $python_method = 'GET';
+      $python_client = new GuzzleHttp\Client([
+          'base_uri' => $python_base_url,
+      ]);
+      $python_response = $python_client->get($python_url)->getBody();
+      $response_object = json_decode($python_response, true);
+      $_SESSION['user_budget'] = 100 - ($response_object.actual_budget / $response_object.monthly_budget) * 100;
     }
   }
 

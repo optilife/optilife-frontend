@@ -182,7 +182,6 @@ $(document).ready(function() {
         }
       };
       var healthChart = new Chart(healthCtx, config);
-      var financesChart = new Chart(financesCtx, config);
     }
 
 
