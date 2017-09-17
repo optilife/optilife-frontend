@@ -1,6 +1,8 @@
 <?php
   // Start session.
-  session_start();
+  if (session_status() == PHP_SESSION_NONE) {
+      session_start();
+  }
 
   function parse_file($filename) {
     if (is_file($filename)) {

@@ -3,7 +3,6 @@
     <h1>Dashboard</h1>
 
     <?php
-      session_start();
       // Provide user data to JS.
       if (isset($_SESSION['user_statistics'])) {
         $user_statistics = $_SESSION['user_statistics'];
