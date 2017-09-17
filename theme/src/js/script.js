@@ -128,7 +128,6 @@ $(document).ready(function() {
       }
 
       var healthCtx = document.getElementById('health-chart').getContext('2d');
-      var financesCtx = document.getElementById('finances-chart').getContext('2d');
       var chartColorRed = 'rgb(255, 99, 132)';
       var chartColorBlue = 'rgb(54, 162, 235)';
       var config = {
